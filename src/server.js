@@ -110,9 +110,3 @@ wss.on("connection", function (ws) {
         }
     });
 });
-
-server.on('upgrade', (request, socket, head) => {
-    wss.handleUpgrade(request, socket, head, socket => {
-        wss.emit('connection', socket, request);
-    });
-});
